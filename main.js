@@ -7,7 +7,6 @@ function loadGame(gameType) {
     document.body.appendChild(script);
 }
 
-
 function startGame(gameType) {
     document.getElementById('mainMenu').classList.add('hidden');
     document.getElementById('gameScreen').classList.remove('hidden');
@@ -50,11 +49,19 @@ function showModal(message) {
     if (message) {
         document.getElementById('modalMessage').textContent = message;
         document.getElementById('modal').classList.add('show');
+        document.addEventListener('keydown', handleModalKeydown);
     }
 }
 
 function closeModal() {
     document.getElementById('modal').classList.remove('show');
+    document.removeEventListener('keydown', handleModalKeydown);
+}
+
+function handleModalKeydown(event) {
+    if (event.key === 'Enter') {
+        closeModal();
+    }
 }
 
 function restartGame() {

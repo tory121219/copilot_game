@@ -212,6 +212,7 @@ body {
     margin: 10px 0;
     font-size: 1rem;
 }
+
 /* Modal Styles */
 .modal {
     display: none; /* 초기 상태를 숨김으로 설정 */
@@ -251,4 +252,23 @@ body {
 .close-button:hover,
 .close-button:focus {
     color: black;
+}
+
+.word-list {
+    margin-top: 20px;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #dbdbdb;
+    padding: 10px;
+    border-radius: 4px;
+    background: #fff;
+}
+
+.word-list div {
+    padding: 5px 0;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.word-list div:last-child {
+    border-bottom: none;
 }
