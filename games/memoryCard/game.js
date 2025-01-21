@@ -32,7 +32,6 @@ class MemoryCardGame {
             card.className = 'memory-card';
             card.dataset.value = icon;
             card.innerHTML = `<i class="fas ${icon}"></i>`;
-            card.style.visibility = 'hidden';
             card.addEventListener('click', () => this.flipCard(card));
             grid.appendChild(card);
         });
@@ -61,7 +60,6 @@ class MemoryCardGame {
     flipCard(card) {
         if (this.flippedCards.length < 2 && !this.flippedCards.includes(card)) {
             card.classList.add('flipped');
-            card.style.visibility = 'visible';
             this.flippedCards.push(card);
 
             if (this.flippedCards.length === 2) {
@@ -84,8 +82,6 @@ class MemoryCardGame {
             setTimeout(() => {
                 card1.classList.remove('flipped');
                 card2.classList.remove('flipped');
-                card1.style.visibility = 'hidden';
-                card2.style.visibility = 'hidden';
                 this.flippedCards = [];
             }, 1000);
         }
